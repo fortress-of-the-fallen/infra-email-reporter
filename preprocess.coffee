@@ -48,16 +48,25 @@ query = """
 }
 """
 
-dir = 'Sprints/Data'
+deleteJsonFiles = (dir) ->
+  new Promise (resolve, reject) ->
+    fs.readdir dir, (err, files) ->
+      return reject err if err
 
-fs.readdir dir, (err, files) ->
-  throw err if err
+      files = files.filter (f) -> f.endsWith('.json')
+      if files.length == 0 then return resolve()
 
-  for file in files when file.endsWith '.json' && file != 'index.json'
-    filePath = path.join dir, file
-    fs.unlink filePath, (err) ->
-      if err then console.error "Failed to delete #{file}:", err
-      else console.log "Deleted #{file}"
+      pending = files.length
+      for file in files
+        filePath = path.join dir, file
+        fs.unlink filePath, (err) ->
+          if err
+            console.error "Failed to delete #{file}:", err
+          else
+            console.log "Deleted #{file}"
+
+          pending--
+          resolve() if pending == 0
 
 groupBySprint = (data) ->
   grouped = {}
@@ -119,5 +128,9 @@ readSprintFiles = ->
     saveJsonToFile 'index.json', files
   catch 
 
-fetchProject()
-readSprintFiles()
+main = ->
+  await deleteJsonFiles("Sprints/Data")
+  await fetchProject()
+  readSprintFiles()
+
+main().catch (err) -> console.error err
