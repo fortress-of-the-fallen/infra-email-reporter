@@ -1,4 +1,4 @@
-name: Send Email
+name: "pipeline"
 
 permissions:
   contents: write
