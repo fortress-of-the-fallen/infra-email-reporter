@@ -48,6 +48,17 @@ query = """
 }
 """
 
+dir = 'Sprints/Data'
+
+fs.readdir dir, (err, files) ->
+  throw err if err
+
+  for file in files when file.endsWith '.json' && file != 'index.json'
+    filePath = path.join dir, file
+    fs.unlink filePath, (err) ->
+      if err then console.error "Failed to delete #{file}:", err
+      else console.log "Deleted #{file}"
+
 groupBySprint = (data) ->
   grouped = {}
 
