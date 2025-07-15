@@ -4,7 +4,7 @@ from Source.Helper.FileHelper import FileHelper
 
 class ConfigKey:
     # Private variables
-    _settings = FileHelper.read_json_file("settings.json")
+    _settings = FileHelper.ReadJsonFile("settings.json")
     
     # Environment variables for SMTP configuration
     SMTP_HOST = os.environ.get("SMTP_HOST")
@@ -14,3 +14,8 @@ class ConfigKey:
     
     # SMTP
     EMAIL_RECIPIENTS = _settings.get("email_recipients", [])
+    
+    # Sprint Items
+    SPRINT_DATA_DIR = "Sprints/Data"
+    SPRINT_ITEMS_INDEX = FileHelper.ReadJsonFile("Sprints/Data/index.json")
+    SPRINT_SUMMARY_PROMPT = FileHelper.ReadFile("Source/Static/SprintSummaryPrompt.txt")

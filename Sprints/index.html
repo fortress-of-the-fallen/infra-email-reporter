@@ -4,496 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sprint Dashboard - Fortress of the Fallen</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        /* Project Header */
-        .project-header {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .project-info {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .project-title h1 {
-            color: white;
-            font-size: 28px;
-            font-weight: bold;
-            margin: 0 0 5px 0;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .project-title p {
-            color: rgba(255, 255, 255, 0.8);
-            margin: 0;
-            font-size: 14px;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .project-link {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .project-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(31, 38, 135, 0.3);
-        }
-
-        .link-icon {
-            font-size: 16px;
-        }
-
-        /* Glassmorphism Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px 20px 20px;
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 20px;
-            min-height: calc(100vh - 120px);
-        }
-
-        /* Glassmorphism Card */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            padding: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
-        }
-
-        /* Navigation Sidebar */
-        .nav-sidebar {
-            overflow-y: auto;
-        }
-
-        .nav-title {
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-align: center;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .sprint-nav-item {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            margin-bottom: 10px;
-            padding: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .sprint-nav-item:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateX(5px);
-        }
-
-        .sprint-nav-item.active {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.4);
-        }
-
-        .sprint-nav-item h3 {
-            color: white;
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-
-        .sprint-nav-item p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 12px;
-        }
-
-        /* Main Content */
-        .main-content {
-            overflow-y: auto;
-        }
-
-        .content-header {
-            margin-bottom: 20px;
-        }
-
-        .content-title {
-            color: white;
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .content-subtitle {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 16px;
-        }
-
-        /* Sprint Items Grid */
-        .sprint-items-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 20px;
-        }
-
-        .sprint-item {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .sprint-item:hover {
-            transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.12);
-            box-shadow: 0 8px 25px rgba(31, 38, 135, 0.4);
-        }
-
-        .sprint-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #00d4ff, #090979);
-            border-radius: 15px 15px 0 0;
-            transition: height 0.3s ease;
-        }
-
-        .sprint-item:hover::before {
-            height: 6px;
-        }
-
-        .sprint-item::after {
-            content: '🔗';
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            font-size: 16px;
-        }
-
-        .sprint-item:hover::after {
-            opacity: 0.7;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .item-title {
-            color: white;
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-
-        .item-number {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 4px 8px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        .item-url {
-            color: #64b5f6;
-            text-decoration: none;
-            font-size: 14px;
-            margin-bottom: 10px;
-            display: inline-block;
-            transition: color 0.3s ease;
-        }
-
-        .item-url:hover {
-            color: #90caf9;
-        }
-
-        .item-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 15px;
-        }
-
-        .item-author {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 14px;
-        }
-
-        .item-state {
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .item-state.open {
-            background: rgba(76, 175, 80, 0.3);
-            color: #a5d6a7;
-            border: 1px solid rgba(76, 175, 80, 0.5);
-        }
-
-        .item-state.closed {
-            background: rgba(244, 67, 54, 0.3);
-            color: #ef9a9a;
-            border: 1px solid rgba(244, 67, 54, 0.5);
-        }
-
-        /* Loading and Empty States */
-        .loading {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 18px;
-            padding: 40px;
-        }
-
-        .empty-state {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 16px;
-            padding: 40px;
-        }
-
-        /* Stats */
-        .sprint-stats {
-            margin-bottom: 25px;
-        }
-
-        .main-stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .stat-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 15px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .stat-number {
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 12px;
-            text-transform: uppercase;
-        }
-
-        /* Detailed Stats */
-        .detailed-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .breakdown-section {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .breakdown-title {
-            color: white;
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .breakdown-item {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .breakdown-item:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateY(-1px);
-        }
-
-        .breakdown-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .breakdown-name {
-            color: white;
-            font-weight: 500;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .breakdown-completion {
-            color: #4fc3f7;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        .breakdown-bar {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            height: 6px;
-            overflow: hidden;
-            margin-bottom: 8px;
-        }
-
-        .breakdown-progress {
-            height: 100%;
-            background: linear-gradient(90deg, #4fc3f7, #29b6f6);
-            border-radius: 10px;
-            transition: width 0.5s ease;
-        }
-
-        .breakdown-details {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 12px;
-        }
-
-        /* Avatar */
-        .avatar {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            object-fit: cover;
-        }
-
-        .item-author {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .author-with-avatar {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto 1fr;
-                height: auto;
-            }
-            
-            .nav-sidebar {
-                max-height: 200px;
-            }
-            
-            .sprint-items-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .detailed-stats {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .main-stats-grid {
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-                gap: 10px;
-            }
-        }
-
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.5);
-        }
-    </style>
+    
+    <!-- Favicon và Web App Icons -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/128/2907/2907826.png">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/128/2907/2907826.png">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/2907/2907826.png">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Project Header -->
@@ -504,12 +21,16 @@
                 <p>Sprint Management Dashboard</p>
             </div>
             <div class="project-links">
+                <div class="theme-toggle" onclick="dashboard.toggleTheme()">
+                    <img src="https://cdn-icons-png.flaticon.com/128/12180/12180668.png" alt="Dark theme" class="theme-icon" id="themeIcon">
+                    <span id="themeText">Dark</span>
+                </div>
                 <a href="https://github.com/fortress-of-the-fallen" target="_blank" class="project-link">
-                    <span class="link-icon">👥</span>
+                    <!-- <span class="link-icon">👥</span> -->
                     Organization
                 </a>
                 <a href="https://github.com/orgs/fortress-of-the-fallen/projects/1" target="_blank" class="project-link">
-                    <span class="link-icon">📋</span>
+                    <!-- <span class="link-icon">📋</span> -->
                     Project Board
                 </a>
             </div>
@@ -534,6 +55,61 @@
 
             <div id="sprint-stats" class="sprint-stats" style="display: none;"></div>
             
+            <!-- Advanced Charts Section -->
+            <div id="charts-section" class="charts-section" style="display: none;">
+                <div class="charts-header">
+                    <h2 class="charts-title">📊 Thống kê nâng cao</h2>
+                    <div class="charts-toggle">
+                        <button class="chart-tab active" onclick="dashboard.switchChartTab('overview')">Tổng quan</button>
+                        <button class="chart-tab" onclick="dashboard.switchChartTab('progress')">Tiến độ</button>
+                        <button class="chart-tab" onclick="dashboard.switchChartTab('prediction')">Dự đoán</button>
+                    </div>
+                </div>
+                
+                <div id="overview-charts" class="chart-tab-content active">
+                    <div class="charts-grid">
+                        <div class="chart-container">
+                            <h3>🏆 Tỷ lệ hoàn thành</h3>
+                            <canvas id="completionChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>👥 Phân phối theo Contributor</h3>
+                            <canvas id="contributorChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>📁 Phân phối theo Repository</h3>
+                            <canvas id="repositoryChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>📈 Trạng thái Tasks</h3>
+                            <canvas id="statusChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="progress-charts" class="chart-tab-content">
+                    <div class="charts-grid">
+                        <div class="chart-container full-width">
+                            <h3>⏱️ Tiến độ theo ngày</h3>
+                            <canvas id="progressChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="prediction-charts" class="chart-tab-content">
+                    <div class="charts-grid">
+                        <div class="chart-container">
+                            <h3>🔮 Dự đoán hoàn thành Sprint</h3>
+                            <canvas id="predictionChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>📊 Velocity Analysis</h3>
+                            <canvas id="velocityChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div id="sprint-content">
                 <div class="empty-state">
                     👈 Chọn một sprint từ menu bên trái để bắt đầu
@@ -542,256 +118,21 @@
         </div>
     </div>
 
-    <script>
-        class SprintDashboard {
-            constructor() {
-                this.sprints = [];
-                this.currentSprint = null;
-                this.sprintData = {};
-                this.init();
-            }
+    <!-- Report Modal -->
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">📊 Báo cáo Sprint</h2>
+                <span class="close" onclick="dashboard.closeReportModal()">&times;</span>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <div class="loading">Đang tải báo cáo...</div>
+            </div>
+        </div>
+    </div>
 
-            async init() {
-                await this.loadSprintIndex();
-                await this.loadAllSprintData();
-                this.renderNavigation();
-            }
-
-            async loadSprintIndex() {
-                try {
-                    const response = await fetch('./Data/index.json');
-                    this.sprints = await response.json();
-                } catch (error) {
-                    console.error('Không thể tải danh sách sprint:', error);
-                }
-            }
-
-            async loadAllSprintData() {
-                for (const sprintFile of this.sprints) {
-                    try {
-                        const response = await fetch(`./Data/${sprintFile}`);
-                        const data = await response.json();
-                        const sprintName = sprintFile.replace('.json', '');
-                        this.sprintData[sprintName] = data;
-                    } catch (error) {
-                        console.error(`Không thể tải dữ liệu sprint ${sprintFile}:`, error);
-                    }
-                }
-            }
-
-            renderNavigation() {
-                const navContainer = document.getElementById('sprint-navigation');
-                
-                if (this.sprints.length === 0) {
-                    navContainer.innerHTML = '<div class="empty-state">Không có sprint nào</div>';
-                    return;
-                }
-
-                const navHTML = this.sprints.map(sprintFile => {
-                    const sprintName = sprintFile.replace('.json', '');
-                    const sprintData = this.sprintData[sprintName] || [];
-                    const startDate = sprintData.length > 0 ? sprintData[0].sprint.startDate : 'N/A';
-                    const duration = sprintData.length > 0 ? sprintData[0].sprint.duration : 0;
-                    
-                    return `
-                        <div class="sprint-nav-item" onclick="dashboard.selectSprint('${sprintName}')">
-                            <h3>Sprint ${sprintName.split('-').slice(1).join('-')}</h3>
-                            <p>📅 ${startDate} • ⏰ ${duration} ngày • 📋 ${sprintData.length} items</p>
-                        </div>
-                    `;
-                }).join('');
-
-                navContainer.innerHTML = navHTML;
-            }
-
-            selectSprint(sprintName) {
-                // Remove active class from all nav items
-                document.querySelectorAll('.sprint-nav-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-
-                // Add active class to selected item
-                event.target.closest('.sprint-nav-item').classList.add('active');
-
-                this.currentSprint = sprintName;
-                this.renderSprintContent();
-            }
-
-            renderSprintContent() {
-                if (!this.currentSprint) return;
-
-                const sprintData = this.sprintData[this.currentSprint] || [];
-                const startDate = sprintData.length > 0 ? sprintData[0].sprint.startDate : 'N/A';
-                const duration = sprintData.length > 0 ? sprintData[0].sprint.duration : 0;
-
-                // Update header
-                document.getElementById('sprint-title').textContent = `Sprint ${this.currentSprint.split('-').slice(1).join('-')}`;
-                document.getElementById('sprint-subtitle').textContent = `Bắt đầu: ${startDate} • Thời gian: ${duration} ngày`;
-
-                // Calculate stats
-                const totalItems = sprintData.length;
-                const openItems = sprintData.filter(item => item.content.state === 'OPEN').length;
-                const closedItems = sprintData.filter(item => item.content.state === 'CLOSED').length;
-                const completionRate = totalItems > 0 ? Math.round((closedItems / totalItems) * 100) : 0;
-                
-                // Calculate repository breakdown
-                const repoStats = {};
-                sprintData.forEach(item => {
-                    const repoName = item.content.url.split('/')[4]; // Extract repo name from URL
-                    if (!repoStats[repoName]) {
-                        repoStats[repoName] = { total: 0, closed: 0 };
-                    }
-                    repoStats[repoName].total++;
-                    if (item.content.state === 'CLOSED') {
-                        repoStats[repoName].closed++;
-                    }
-                });
-
-                // Calculate author breakdown
-                const authorStats = {};
-                sprintData.forEach(item => {
-                    const author = item.content.author.login;
-                    if (!authorStats[author]) {
-                        authorStats[author] = { total: 0, closed: 0 };
-                    }
-                    authorStats[author].total++;
-                    if (item.content.state === 'CLOSED') {
-                        authorStats[author].closed++;
-                    }
-                });
-
-                // Render main stats
-                const statsHTML = `
-                    <div class="main-stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-number">${totalItems}</div>
-                            <div class="stat-label">Tổng Tickets</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">${closedItems}</div>
-                            <div class="stat-label">Hoàn Thành</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">${openItems}</div>
-                            <div class="stat-label">Đang Làm</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">${completionRate}%</div>
-                            <div class="stat-label">Tỷ Lệ Hoàn Thành</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">${Object.keys(repoStats).length}</div>
-                            <div class="stat-label">Repositories</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">${Object.keys(authorStats).length}</div>
-                            <div class="stat-label">Contributors</div>
-                        </div>
-                    </div>
-                `;
-
-                // Create detailed breakdown
-                const repoBreakdownHTML = Object.entries(repoStats)
-                    .sort(([,a], [,b]) => b.total - a.total)
-                    .map(([repo, stats]) => {
-                        const repoCompletion = stats.total > 0 ? Math.round((stats.closed / stats.total) * 100) : 0;
-                        return `
-                            <div class="breakdown-item">
-                                <div class="breakdown-header">
-                                    <span class="breakdown-name">📁 ${repo}</span>
-                                    <span class="breakdown-completion">${repoCompletion}%</span>
-                                </div>
-                                <div class="breakdown-bar">
-                                    <div class="breakdown-progress" style="width: ${repoCompletion}%"></div>
-                                </div>
-                                <div class="breakdown-details">${stats.closed}/${stats.total} tickets hoàn thành</div>
-                            </div>
-                        `;
-                    }).join('');
-
-                // Get author avatars
-                const authorAvatars = {};
-                sprintData.forEach(item => {
-                    const author = item.content.author.login;
-                    if (!authorAvatars[author]) {
-                        authorAvatars[author] = item.content.author.avatarUrl;
-                    }
-                });
-
-                const authorBreakdownHTML = Object.entries(authorStats)
-                    .sort(([,a], [,b]) => b.total - a.total)
-                    .map(([author, stats]) => {
-                        const authorCompletion = stats.total > 0 ? Math.round((stats.closed / stats.total) * 100) : 0;
-                        const avatarUrl = authorAvatars[author];
-                        return `
-                            <div class="breakdown-item">
-                                <div class="breakdown-header">
-                                    <div class="author-with-avatar">
-                                        <img src="${avatarUrl}" alt="${author}" class="avatar" onerror="this.style.display='none'">
-                                        <span class="breakdown-name">${author}</span>
-                                    </div>
-                                    <span class="breakdown-completion">${authorCompletion}%</span>
-                                </div>
-                                <div class="breakdown-bar">
-                                    <div class="breakdown-progress" style="width: ${authorCompletion}%"></div>
-                                </div>
-                                <div class="breakdown-details">${stats.closed}/${stats.total} tickets hoàn thành</div>
-                            </div>
-                        `;
-                    }).join('');
-
-                const detailedStatsHTML = `
-                    <div class="detailed-stats">
-                        <div class="breakdown-section">
-                            <h3 class="breakdown-title">📊 Thống kê theo Repository</h3>
-                            ${repoBreakdownHTML}
-                        </div>
-                        <div class="breakdown-section">
-                            <h3 class="breakdown-title">👥 Thống kê theo Contributor</h3>
-                            ${authorBreakdownHTML}
-                        </div>
-                    </div>
-                `;
-
-                document.getElementById('sprint-stats').innerHTML = statsHTML + detailedStatsHTML;
-                document.getElementById('sprint-stats').style.display = 'block';
-
-                // Render sprint items
-                if (sprintData.length === 0) {
-                    document.getElementById('sprint-content').innerHTML = 
-                        '<div class="empty-state">Sprint này không có items nào</div>';
-                    return;
-                }
-
-                const itemsHTML = sprintData.map(item => `
-                    <div class="sprint-item" onclick="window.open('${item.content.url}', '_blank')">
-                        <div class="item-header">
-                            <div>
-                                <h3 class="item-title">${item.content.title}</h3>
-                                <a href="${item.content.url}" target="_blank" class="item-url" onclick="event.stopPropagation()">
-                                    🔗 Issue #${item.content.number}
-                                </a>
-                            </div>
-                            <span class="item-number">#${item.content.number}</span>
-                        </div>
-                        
-                        <div class="item-meta">
-                            <div class="item-author">
-                                <img src="${item.content.author.avatarUrl}" alt="${item.content.author.login}" class="avatar" onerror="this.style.display='none'">
-                                <span>${item.content.author.login}</span>
-                            </div>
-                            <span class="item-state ${item.content.state.toLowerCase()}">${item.content.state}</span>
-                        </div>
-                    </div>
-                `).join('');
-
-                document.getElementById('sprint-content').innerHTML = 
-                    `<div class="sprint-items-grid">${itemsHTML}</div>`;
-            }
-        }
-
-        // Initialize dashboard
-        const dashboard = new SprintDashboard();
-    </script>
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
