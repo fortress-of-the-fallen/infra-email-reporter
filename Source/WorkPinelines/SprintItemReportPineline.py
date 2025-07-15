@@ -5,4 +5,5 @@ class SprintItemReportPipeline:
         self.sprint_item_service = SprintItemService()
 
     def run(self):
+        self.sprint_item_service.GetSummaryAnalysisByGemini()
         self.sprint_item_service.ParseSprintItems()
