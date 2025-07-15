@@ -9,31 +9,7 @@ on:
     - cron: "0 3 * * *"
 
 jobs:
-  preprocess:
-    runs-on: ubuntu-latest
-    environment: secret
-
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v3
-        with:
-          persist-credentials: false
-        
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: |
-          npm install -g coffeescript
-
-      - name: Run CoffeeScript file
-        run: |
-          npx coffee preprocess.coffee
-
   pipeline:
-    needs: preprocess
     runs-on: ubuntu-latest
 
     environment: secret
@@ -51,6 +27,19 @@ jobs:
       uses: actions/checkout@v3
       with:
         persist-credentials: false
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: |
+        npm install -g coffeescript
+
+    - name: Run CoffeeScript file
+      run: |
+        npx coffee preprocess.coffee
 
     - name: Set up Python
       uses: actions/setup-python@v5
