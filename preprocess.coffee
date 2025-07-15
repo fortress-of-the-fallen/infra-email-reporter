@@ -128,7 +128,7 @@ readSprintFiles = ->
     saveJsonToFile 'index.json', files
   catch 
 
-main = ->
+main = async ->
   await deleteJsonFiles("Sprints/Data")
   await fetchProject()
   readSprintFiles()
