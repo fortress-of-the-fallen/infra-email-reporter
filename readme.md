@@ -1,178 +1,206 @@
 # 🏰 Fortress of the Fallen - Infra Email Reporter
 
-Hệ thống infrastructure tự động cho team [Fortress of the Fallen](https://github.com/fortress-of-the-fallen), bao gồm email reporter và sprint management dashboard.
+Một hệ thống tự động hóa quản lý sprint và báo cáo cho dự án **Fortress of the Fallen**. Ứng dụng kết hợp automation email, phân tích dữ liệu sprint và dashboard trực quan để tối ưu hóa quy trình làm việc của team.
 
-## 🌟 Tổng quan
+## ✨ Tính năng chính
 
-Dự án này cung cấp 2 tính năng chính:
-1. **📧 Email Reporter**: Tự động gửi email nhắc nhở cuộc họp
-2. **📊 Sprint Dashboard**: Giao diện quản lý sprint với thiết kế glassmorphism
+### 📧 **Email Automation**
+- **Meeting Reminder**: Gửi email nhắc nhở meeting tự động
+- **SMTP Integration**: Hỗ trợ gửi email qua SMTP server
+- **HTML Templates**: Email được thiết kế đẹp mắt với template HTML
+- **Scheduled Notifications**: Tự động gửi theo lịch trình
 
-## ✨ Tính năng
+### 📊 **Sprint Management & Analytics**
+- **Sprint Data Crawler**: Thu thập dữ liệu sprint từ GitHub Projects
+- **AI-Powered Analysis**: Sử dụng Google Gemini AI để phân tích sprint
+- **Performance Tracking**: Theo dõi hiệu suất từng contributor
+- **Data Visualization**: Biểu đồ và thống kê trực quan
 
-### 📧 Email Reporter
-- 🔄 **Pipeline tự động**: Quản lý quy trình gửi email qua WorkPipelineManager
-- 📨 **Email HTML đẹp mắt**: Template responsive với thiết kế Google Meet
-- ⚙️ **Cấu hình linh hoạt**: Sử dụng biến môi trường và file settings.json
-- 📋 **Danh sách người nhận**: Quản lý qua file cấu hình JSON
-- ⏰ **CI/CD tự động**: Chạy hàng ngày qua GitHub Actions
+### 🎛️ **Interactive Dashboard**
+- **Glassmorphism Design**: Giao diện hiện đại với hiệu ứng thủy tinh
+- **Dark/Light Theme**: Chuyển đổi theme linh hoạt
+- **Responsive Layout**: Tối ưu cho mọi thiết bị
+- **Real-time Charts**: Biểu đồ tương tác với Chart.js
 
-### 📊 Sprint Dashboard
-- 🎨 **Thiết kế Glassmorphism**: Giao diện hiện đại với hiệu ứng kính mờ
-- 📱 **Responsive Design**: Tương thích mọi thiết bị
-- 📈 **Thống kê chi tiết**: 
-  - Tổng số tickets, tickets hoàn thành, đang làm
-  - Tỷ lệ hoàn thành theo %
-  - Breakdown theo repository và contributor
-  - Progress bars trực quan
-- 👤 **Avatar GitHub**: Hiển thị ảnh đại diện của contributors
-- 🔗 **Integration GitHub**: Click vào ticket để mở GitHub issue
-- 📊 **Project Board**: Kết nối với [GitHub Project](https://github.com/orgs/fortress-of-the-fallen/projects/1)
+### 🤖 **AI Integration**
+- **Gemini AI**: Phân tích thông minh nội dung sprint
+- **Automated Reports**: Tự động tạo báo cáo chi tiết
+- **Insight Generation**: Đưa ra nhận xét và gợi ý cải thiện
 
-## 🚀 Cài đặt & Chạy
+## 🏗️ Kiến trúc hệ thống
 
-### Cấu hình Email Reporter
-
-1. **Cấu hình biến môi trường** (tạo file `.env`):
-```bash
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-app-password
-TOKEN=github-token-for-graphql
+```
+infra-email-reporter/
+├── Source/                          # Python Backend
+│   ├── WorkPinelines/              # Pipeline orchestration
+│   │   ├── EmailPineline.py        # Email automation pipeline
+│   │   └── WorkPinelineManager.py  # Pipeline manager
+│   ├── Service/                    # Business logic services
+│   │   ├── EmailService.py         # Email sending service
+│   │   └── SprintItemService.py    # Sprint data processing
+│   ├── Helper/                     # Utility functions
+│   │   └── FileHelper.py           # File operations
+│   ├── Constant/                   # Configuration
+│   │   └── ConfigKey.py            # Config constants
+│   ├── Static/                     # Static assets
+│   │   ├── meeting-reminder.html   # Email template
+│   │   └── SprintSummaryPrompt.txt # AI prompt
+│   └── Main.py                     # Application entry point
+├── Sprints/                        # Frontend Dashboard
+│   ├── Data/                       # Sprint data storage
+│   │   ├── index.json             # Sprint index
+│   │   ├── sprint-*.json          # Sprint data files
+│   │   └── sprint-*.md            # AI analysis reports
+│   ├── index.html                 # Dashboard main page
+│   ├── script.js                  # Frontend logic
+│   └── style.css                  # Glassmorphism styles
+├── settings.json                   # Application settings
+├── req.txt                        # Python dependencies
+└── run.bat                        # Windows runner script
 ```
 
-2. **Cấu hình người nhận** (`settings.json`):
+## 🔧 Thiết lập môi trường
+
+### **1. Yêu cầu hệ thống**
+- Python 3.8+
+- Node.js (cho development)
+- SMTP server access
+- Google Gemini API key
+
+### **2. Cài đặt dependencies**
+```bash
+# Cài đặt Python packages
+pip install -r req.txt
+
+# Hoặc cài đặt thủ công
+pip install requests smtplib email
+```
+
+### **3. Cấu hình environment variables**
+```bash
+# Email configuration
+export SMTP_HOST="your-smtp-host"
+export SMTP_PORT="587"
+export SMTP_USER="your-email@domain.com"
+export SMTP_PASS="your-app-password"
+
+# AI configuration  
+export GEMINI_API_KEY="your-gemini-api-key"
+```
+
+### **4. Cấu hình settings.json**
 ```json
 {
   "email_recipients": [
-    "member1@example.com",
-    "member2@example.com"
+    "team-member1@email.com",
+    "team-member2@email.com"
   ]
 }
 ```
 
-3. **Chạy ứng dụng**:
+## 🚀 Sử dụng
+
+### **1. Chạy Email Pipeline**
 ```bash
-python -m Source.Main
+# Chạy tất cả pipelines
+python Source/Main.py
+
+# Hoặc sử dụng batch file (Windows)
+run.bat
 ```
 
-### Sử dụng Sprint Dashboard
-
-1. **Fetch dữ liệu từ GitHub**:
+### **2. Tạo Sprint Analysis**
 ```bash
-npm install -g coffeescript
-coffee preprocess.coffee
+# Chạy AI analysis cho sprint hiện tại
+python Source/Service/SprintItemService.py
 ```
 
-2. **Mở Sprint Dashboard**:
+### **3. Xem Dashboard**
 ```bash
-# Mở file Sprints/index.html trong trình duyệt
+# Mở file trong browser
 open Sprints/index.html
+
+# Hoặc serve với Python
+python -m http.server 8000
+# Truy cập: http://localhost:8000/Sprints/
 ```
 
-## 📁 Cấu trúc dự án
+## 📈 Dashboard Features
 
-```
-infra-email-reporter/
-├── 📧 Email Reporter
-│   ├── Source/
-│   │   ├── Main.py                    # Entry point
-│   │   ├── WorkPinelines/             # Quản lý pipeline
-│   │   │   ├── WorkPinelineManager.py # Manager chính
-│   │   │   └── EmailPineline.py       # Pipeline gửi email
-│   │   ├── Service/
-│   │   │   ├── EmailService.py        # Service xử lý SMTP
-│   │   │   └── SprintItemService.py   # Service sprint items
-│   │   ├── Static/
-│   │   │   └── meeting-reminder.html  # Template email
-│   │   ├── Constant/
-│   │   │   └── ConfigKey.py          # Cấu hình hệ thống
-│   │   └── Helper/
-│   │       └── FileHelper.py         # Tiện ích đọc file
-│   └── settings.json                 # Cấu hình người nhận
-├── 📊 Sprint Dashboard
-│   ├── Sprints/
-│   │   ├── index.html                # Dashboard chính
-│   │   └── Data/                     # Dữ liệu sprint
-│   │       ├── index.json           # Danh sách sprint files
-│   │       ├── sprint-2025-07-07.json
-│   │       └── sprint-2025-07-21.json
-│   └── preprocess.coffee            # Script fetch data từ GitHub
-├── 🚀 CI/CD
-│   └── .github/workflows/
-│       └── pineline.yaml            # GitHub Actions
-└── 📚 Documentation
-    ├── docs/                        # Hình ảnh documentation
-    └── readme.md                    # File này
-```
+### **Sprint Overview**
+- 📊 Completion Rate Charts
+- 👥 Contributor Performance
+- 📁 Repository Distribution  
+- 📈 Task Status Breakdown
 
-## 🔄 CI/CD Pipeline
+### **Advanced Analytics**
+- ⏱️ Progress Timeline
+- 🔮 Sprint Prediction
+- 📊 Velocity Analysis
+- 🎯 Performance Metrics
 
-Dự án được tự động hóa qua GitHub Actions:
+### **Interactive Elements**
+- 🎨 Theme Toggle (Dark/Light)
+- 📱 Mobile Responsive
+- 🔍 Drill-down Details
+- 📋 Export Reports
 
-- **⏰ Lịch chạy**: Mỗi ngày lúc 3:00 GMT (10:00 GMT+7)
-- **🚀 Manual trigger**: Có thể chạy thủ công qua GitHub Actions
-- **📧 Tự động gửi email**: Nhắc nhở cuộc họp team hàng ngày
+## 🔗 Tích hợp
 
-## 🛠️ Công nghệ sử dụng
+### **GitHub Integration**
+- Tự động crawl sprint data từ GitHub Projects
+- Sync real-time với GitHub Issues
+- Link trực tiếp đến issues từ dashboard
 
-### Backend (Email Reporter)
-- **Python 3.11+** - Ngôn ngữ chính
-- **smtplib** - Gửi email qua SMTP
-- **HTML Email Template** - Giao diện email đẹp mắt
-- **GitHub Actions** - CI/CD tự động
+### **CI/CD Integration**
+- Setup auto-reporting via GitHub Actions
+- Scheduled pipeline execution
+- Automated deployment
 
-### Frontend (Sprint Dashboard)
-- **HTML5/CSS3/JavaScript** - Core technologies
-- **Glassmorphism Design** - Thiết kế hiện đại
-- **GitHub GraphQL API** - Fetch dữ liệu project
-- **CoffeeScript** - Script preprocessing
-- **Responsive Design** - Mobile-friendly
+## 🛠️ Development
 
-### Integration
-- **GitHub Projects V2** - Quản lý sprint
-- **GitHub Issues** - Ticket tracking
-- **GitHub API** - Data fetching
+### **Thêm Pipeline mới**
+```python
+# Tạo pipeline mới trong WorkPinelines/
+class YourPipeline:
+    def run(self):
+        # Your logic here
+        pass
 
-## 📊 Sprint Data Structure
-
-```json
-{
-  "id": "PVTI_...",
-  "content": {
-    "title": "Feature Title",
-    "url": "https://github.com/fortress-of-the-fallen/repo/issues/1",
-    "number": 1,
-    "state": "OPEN|CLOSED",
-    "author": {
-      "login": "username",
-      "url": "https://github.com/username",
-      "avatarUrl": "https://avatars.githubusercontent.com/..."
-    }
-  },
-  "sprint": {
-    "duration": 14,
-    "startDate": "2025-07-21"
-  }
-}
+# Đăng ký trong WorkPinelineManager
+self.work_pipelines.append(YourPipeline())
 ```
 
-## 🔗 Links quan trọng
+### **Customize Email Template**
+- Chỉnh sửa `Source/Static/meeting-reminder.html`
+- Sử dụng format strings cho dynamic content
+- Support HTML và inline CSS
 
-- 🏢 **Organization**: [Fortress of the Fallen](https://github.com/fortress-of-the-fallen)
-- 📋 **Project Board**: [GitHub Project](https://github.com/orgs/fortress-of-the-fallen/projects/1)
-- 🎮 **Game Design**: [FotF-GDD](https://github.com/fortress-of-the-fallen/FotF-GDD)
-- ⚙️ **Backend**: [Back-end](https://github.com/fortress-of-the-fallen/back-end)
-- 🎨 **Client**: [FotF-Client](https://github.com/fortress-of-the-fallen/FotF-Client)
+### **Extend Dashboard**
+- Thêm chart mới trong `script.js`
+- Custom styles trong `style.css`
+- Responsive design với CSS Grid/Flexbox
 
-## 👥 Team
+## 📝 License
 
-- **wwenrr** - Backend Developer
-- **TKira4** - Game Designer & Developer
+Dự án này thuộc về **Fortress of the Fallen** organization.
 
 ---
 
-*🏰 Được phát triển bởi Fortress of the Fallen Team*
+## 🤝 Contributing
 
-**"Building the future of gaming, one sprint at a time"**
+1. Fork repository
+2. Tạo feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Tạo Pull Request
+
+## 📞 Support
+
+- **GitHub Issues**: [Report bugs](https://github.com/fortress-of-the-fallen/infra-email-reporter/issues)
+- **Organization**: [Fortress of the Fallen](https://github.com/fortress-of-the-fallen)
+- **Project Board**: [Sprint Management](https://github.com/orgs/fortress-of-the-fallen/projects/1)
+
+---
+
+*Được xây dựng với ❤️ bởi Fortress of the Fallen team*
