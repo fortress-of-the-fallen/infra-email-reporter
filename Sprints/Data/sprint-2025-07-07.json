@@ -18,6 +18,20 @@
         }
     },
     {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcmi3U",
+        "content": {
+            "title": "stats system",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/11",
+            "number": 11,
+            "state": "OPEN",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        }
+    },
+    {
         "id": "PVTI_lADODQ_I8s4A9UIvzgcUpUU",
         "content": {
             "title": "add mongo deffered excution",
@@ -33,6 +47,24 @@
         "sprint": {
             "duration": 14,
             "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcUo3I",
+        "content": {
+            "title": "Complete Game prototype ",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/1",
+            "number": 1,
+            "state": "OPEN",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
         }
     },
     {
@@ -69,6 +101,24 @@
         "sprint": {
             "duration": 14,
             "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcUqN8",
+        "content": {
+            "title": "Game Mechanics",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/4",
+            "number": 4,
+            "state": "OPEN",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
         }
     },
     {
@@ -198,6 +248,24 @@
         }
     },
     {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcjhcs",
+        "content": {
+            "title": "World Building",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/6",
+            "number": 6,
+            "state": "OPEN",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
+        }
+    },
+    {
         "id": "PVTI_lADODQ_I8s4A9UIvzgcjh7Q",
         "content": {
             "title": "Racial system",
@@ -249,6 +317,24 @@
         "sprint": {
             "duration": 14,
             "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcjiMs",
+        "content": {
+            "title": "Map Building",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/10",
+            "number": 10,
+            "state": "OPEN",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
         }
     },
     {
