@@ -42,7 +42,7 @@ class SprintItemService:
             "Content-Type": "application/json"
         }
         
-        query = FileHelper.ReadFile("Source/Static/GithubSprintItemsQuery.txt")
+        query = FileHelper.ReadFile("Source/Static/GithubSprintItemsQuery.graphql")
         
         result = ApiHelper.QueryGraphQL(url, headers, query)
         
