@@ -10,7 +10,9 @@ import asyncio
 
 class SprintItemService:    
     def GetSummaryAnalysisByGemini(self):
-        prompt = f"{ConfigKey.SPRINT_SUMMARY_PROMPT}\n\n{FileHelper.ReadJsonFile(f"{ConfigKey.SPRINT_DATA_DIR}/{ConfigKey.SPRINT_ITEMS_INDEX[-1]}")}"
+        sprint_path = f"{ConfigKey.SPRINT_DATA_DIR}/{ConfigKey.SPRINT_ITEMS_INDEX[-1]}"
+        sprint_data = FileHelper.ReadJsonFile(sprint_path)
+        prompt = f"{ConfigKey.SPRINT_SUMMARY_PROMPT}\n\n{sprint_data}"
         
         body = {
             "contents": [
