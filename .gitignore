@@ -41,14 +41,11 @@ venv.bak/
 *.swp
 *.swo
 *~
+run.bat
 
 # OS
 .DS_Store
 Thumbs.db
-
-# Logs
-*.log
-logs/
 
 # Database
 *.db

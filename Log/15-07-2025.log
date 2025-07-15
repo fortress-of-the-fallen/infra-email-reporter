@@ -1,0 +1,24 @@
+2025-07-15 20:34:02 - root - INFO - Running work pipeline: <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x0000021E860FF8C0>
+2025-07-15 20:34:06 - root - ERROR - Error occurred while running pipeline <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x0000021E860FF8C0>: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-74eb9f4caa9sm12288076b3a.111 - gsmtp')
+2025-07-15 20:34:06 - root - INFO - Completed work pipeline: <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x0000021E860FF8C0>
+2025-07-15 20:34:06 - root - INFO - Running work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x0000021E860FFA10>
+2025-07-15 20:34:14 - root - INFO - Response status code: 200
+2025-07-15 20:34:14 - root - INFO - Response text: {
+2025-07-15 20:34:14 - root - INFO - Completed work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x0000021E860FFA10>
+2025-07-15 14:15:47 - root - INFO - Running work pipeline: <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x7f04bdcdcbd0>
+2025-07-15 14:15:49 - root - INFO - Completed work pipeline: <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x7f04bdcdcbd0>
+2025-07-15 14:15:49 - root - INFO - Running work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x7f04bd0e2a10>
+2025-07-15 14:15:58 - root - INFO - Response status code: 200
+2025-07-15 14:15:58 - root - INFO - Completed work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x7f04bd0e2a10>
+2025-07-15 14:22:59 - root - INFO - Running work pipeline: <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x7f8301a10790>
+2025-07-15 14:23:02 - root - INFO - Completed work pipeline: <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x7f8301a10790>
+2025-07-15 14:23:02 - root - INFO - Running work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x7f8301ccba10>
+2025-07-15 14:23:05 - root - INFO - Response status code: 503
+2025-07-15 14:23:05 - root - ERROR - Error occurred while running pipeline <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x7f8301ccba10>: 'candidates'
+2025-07-15 14:23:05 - root - INFO - Completed work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x7f8301ccba10>
+2025-07-15 14:27:43 - root - INFO - Running work pipeline: <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x7f3ea9e58790>
+2025-07-15 14:27:45 - root - INFO - Completed work pipeline: <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x7f3ea9e58790>
+2025-07-15 14:27:45 - root - INFO - Running work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x7f3ea9e58750>
+2025-07-15 14:27:51 - root - INFO - Response status code: 503
+2025-07-15 14:27:51 - root - ERROR - Error occurred while running pipeline <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x7f3ea9e58750>: 'candidates'
+2025-07-15 14:27:51 - root - INFO - Completed work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x7f3ea9e58750>

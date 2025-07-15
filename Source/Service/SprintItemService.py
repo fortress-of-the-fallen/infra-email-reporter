@@ -1,3 +1,4 @@
+import logging
 from Source.Constant.ConfigKey import ConfigKey
 from Source.Helper.FileHelper import FileHelper
 import requests
@@ -21,6 +22,8 @@ class SprintItemService:
         }
         
         response = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={os.getenv('GEMINI_API_KEY')}", json=body)
+
+        logging.info(f"Response status code: {response.status_code}")
 
         content = response.json()['candidates'][0]['content']['parts'][0]['text']
 

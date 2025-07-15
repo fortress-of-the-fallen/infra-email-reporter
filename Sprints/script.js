@@ -9,6 +9,10 @@ class SprintDashboard {
         this.currentTheme = this.getStoredTheme();
         this.charts = {};
         this.currentChartTab = 'overview';
+        this.logFiles = [];
+        this.currentLogFile = null;
+        this.currentLogContent = '';
+        this.filteredLogContent = '';
         this.init();
     }
 
@@ -1073,6 +1077,238 @@ class SprintDashboard {
             this.renderCharts(this.sprintData[this.currentSprint]);
         }
     }
+    // Logs Management Methods
+    async openLogsModal() {
+        const modal = document.getElementById('logsModal');
+        modal.style.display = 'block';
+        await this.loadLogFiles();
+    }
+
+    closeLogsModal() {
+        const modal = document.getElementById('logsModal');
+        modal.style.display = 'none';
+    }
+
+    async loadLogFiles() {
+        const logFilesList = document.getElementById('logFilesList');
+        logFilesList.innerHTML = '<div class="loading">Đang tải danh sách log files...</div>';
+        
+        try {
+            // Try to discover log files by pattern
+            const logFiles = await this.discoverLogFiles();
+            this.logFiles = logFiles;
+            this.renderLogFilesList();
+        } catch (error) {
+            console.error('Error loading log files:', error);
+            logFilesList.innerHTML = '<div class="empty-state">❌ Không thể tải danh sách log files</div>';
+        }
+    }
+
+    async discoverLogFiles() {
+        // Fetch danh sách log files từ Log/index.json
+        try {
+            const response = await fetch('Log/index.json', {
+                cache: 'no-cache'
+            });
+            
+            if (response.ok) {
+                const fileNames = await response.json();
+                
+                // Convert tên file thành object với thông tin cần thiết
+                const logFiles = fileNames.map(fileName => {
+                    // Parse date từ tên file (format: DD-MM-YYYY.log)
+                    const dateMatch = fileName.match(/(\d{2})-(\d{2})-(\d{4})\.log$/);
+                    const date = dateMatch ? `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}` : 'N/A';
+                    
+                    return {
+                        name: fileName,
+                        path: `Log/${fileName}`,
+                        date: date,
+                        size: 0, // Sẽ được update khi fetch content
+                        lastModified: null // Sẽ được update khi fetch content
+                    };
+                });
+                
+                // Sort theo date (newest first)
+                return logFiles.sort((a, b) => b.date.localeCompare(a.date));
+            } else {
+                console.error('Cannot fetch log index:', response.status);
+                return [];
+            }
+        } catch (error) {
+            console.error('Error fetching log index:', error);
+            return [];
+        }
+    }
+
+    renderLogFilesList() {
+        const logFilesList = document.getElementById('logFilesList');
+        
+        if (this.logFiles.length === 0) {
+            logFilesList.innerHTML = '<div class="empty-state">Không tìm thấy log files nào</div>';
+            return;
+        }
+        
+        const filesHTML = this.logFiles.map(file => {
+            // Hiển thị thông tin cơ bản, size sẽ được update khi load content
+            return `
+                <div class="log-file-item" onclick="dashboard.selectLogFile('${file.name}', '${file.path}')">
+                    <div class="log-file-name">📄 ${file.name}</div>
+                    <div class="log-file-info">
+                        📅 ${file.date}
+                    </div>
+                </div>
+            `;
+        }).join('');
+        
+        logFilesList.innerHTML = filesHTML;
+    }
+
+    formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    async selectLogFile(fileName, filePath) {
+        // Remove active class from all log file items
+        document.querySelectorAll('.log-file-item').forEach(item => {
+            item.classList.remove('active');
+        });
+        
+        // Add active class to selected item
+        event.target.closest('.log-file-item').classList.add('active');
+        
+        this.currentLogFile = fileName;
+        document.getElementById('currentLogFile').textContent = `📄 ${fileName}`;
+        
+        // Load log content
+        await this.loadLogContent(filePath);
+    }
+
+    async loadLogContent(filePath) {
+        const logContent = document.getElementById('logContent');
+        logContent.innerHTML = '<div class="loading">Đang tải nội dung log...</div>';
+        
+        try {
+            const response = await fetch(filePath, {
+                cache: 'no-cache'
+            });
+            
+            if (response.ok) {
+                const content = await response.text();
+                this.currentLogContent = content;
+                this.filteredLogContent = content;
+                
+                // Cập nhật thông tin file với size và lastModified từ response headers
+                const contentLength = response.headers.get('content-length');
+                const lastModified = response.headers.get('last-modified');
+                
+                // Cập nhật thông tin file trong this.logFiles
+                const fileIndex = this.logFiles.findIndex(f => f.path === filePath);
+                if (fileIndex !== -1) {
+                    this.logFiles[fileIndex].size = contentLength ? parseInt(contentLength) : content.length;
+                    this.logFiles[fileIndex].lastModified = lastModified ? new Date(lastModified) : null;
+                    
+                    // Cập nhật hiển thị info của file đang active
+                    const activeItem = document.querySelector('.log-file-item.active .log-file-info');
+                    if (activeItem) {
+                        const file = this.logFiles[fileIndex];
+                        const sizeFormatted = this.formatFileSize(file.size);
+                        const dateFormatted = file.lastModified ? 
+                            file.lastModified.toLocaleDateString('vi-VN') + ' ' + file.lastModified.toLocaleTimeString('vi-VN') : 
+                            file.date;
+                        activeItem.innerHTML = `📊 ${sizeFormatted} • ⏰ ${dateFormatted}`;
+                    }
+                }
+                
+                this.renderLogContent();
+                this.updateLogStats();
+                document.getElementById('logStats').style.display = 'flex';
+            } else {
+                logContent.innerHTML = '<div class="empty-state">❌ Không thể tải nội dung log file</div>';
+            }
+        } catch (error) {
+            console.error('Error loading log content:', error);
+            logContent.innerHTML = '<div class="empty-state">❌ Lỗi khi tải log file</div>';
+        }
+    }
+
+    renderLogContent() {
+        const logContent = document.getElementById('logContent');
+        
+        if (!this.filteredLogContent.trim()) {
+            logContent.innerHTML = '<div class="empty-state">Log file trống</div>';
+            return;
+        }
+        
+        // Chỉ hiển thị raw text, không format gì hết
+        logContent.textContent = this.filteredLogContent;
+    }
+
+    updateLogStats() {
+        const lines = this.filteredLogContent.split('\n').filter(line => line.trim());
+        const stats = {
+            total: lines.length,
+            info: 0,
+            error: 0,
+            warning: 0,
+            debug: 0
+        };
+        
+        lines.forEach(line => {
+            if (line.includes(' - INFO - ')) stats.info++;
+            else if (line.includes(' - ERROR - ')) stats.error++;
+            else if (line.includes(' - WARNING - ')) stats.warning++;
+            else if (line.includes(' - DEBUG - ')) stats.debug++;
+        });
+        
+        document.getElementById('totalLines').textContent = stats.total;
+        document.getElementById('infoCount').textContent = stats.info;
+        document.getElementById('errorCount').textContent = stats.error;
+        document.getElementById('warningCount').textContent = stats.warning;
+        document.getElementById('debugCount').textContent = stats.debug;
+    }
+
+    searchLogs() {
+        const searchTerm = document.getElementById('logSearch').value.toLowerCase();
+        
+        if (!searchTerm) {
+            this.filteredLogContent = this.currentLogContent;
+        } else {
+            const lines = this.currentLogContent.split('\n');
+            const filteredLines = lines.filter(line => 
+                line.toLowerCase().includes(searchTerm)
+            );
+            this.filteredLogContent = filteredLines.join('\n');
+        }
+        
+        this.renderLogContent();
+        this.updateLogStats();
+    }
+
+    downloadCurrentLog() {
+        if (!this.currentLogFile || !this.currentLogContent) {
+            alert('Vui lòng chọn một log file trước');
+            return;
+        }
+        
+        const blob = new Blob([this.currentLogContent], { type: 'text/plain' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = this.currentLogFile;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+    }
+
+    async refreshLogsList() {
+        await this.loadLogFiles();
+    }
 }
 
 // Initialize dashboard
@@ -1083,5 +1319,10 @@ window.onclick = function(event) {
     const modal = document.getElementById('reportModal');
     if (event.target === modal) {
         dashboard.closeReportModal();
+    }
+    
+    const logsModal = document.getElementById('logsModal');
+    if (event.target === logsModal) {
+        dashboard.closeLogsModal();
     }
 } 

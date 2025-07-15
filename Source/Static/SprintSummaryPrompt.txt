@@ -19,6 +19,7 @@ Tôi sẽ cung cấp cho bạn một danh sách các task trong sprint, dưới 
 ### 4. ✅ **Kết luận**
 - Ghi rõ ai là người có performance tốt hơn trong sprint này và lý do.
 - Gợi ý cải thiện cho contributor có tỷ lệ hoàn thành thấp hơn.
+- Viết dài, chi tiết và rõ ràng, không dùng từ viết tắt.
 ---
 ⛔️ **Quan trọng:** Tất cả phản hồi phải dùng Markdown (##, ###, bảng, gạch đầu dòng...); không được trả về định dạng plain text hoặc HTML.
 

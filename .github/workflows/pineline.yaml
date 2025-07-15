@@ -13,9 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: secret
 
-    env:
-      PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
-
     steps:
       - name: Checkout source
         uses: actions/checkout@v3
@@ -35,18 +32,8 @@ jobs:
         run: |
           npx coffee preprocess.coffee
 
-      - name: Configure Git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@qscvdefb@gmail.com"
-
-      - name: Commit changes
-        run: |
-          git add .
-          git commit -m "chore: auto update after preprocess" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
-
-  send:
+  pipeline:
+    needs: preprocess
     runs-on: ubuntu-latest
 
     environment: secret
@@ -56,10 +43,14 @@ jobs:
       SMTP_PORT: 587
       SMTP_USER: ${{ secrets.SMTP_USER }}
       SMTP_PASS: ${{ secrets.SMTP_PASS }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
 
     steps:
     - name: Checkout source
       uses: actions/checkout@v3
+      with:
+        persist-credentials: false
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -68,5 +59,17 @@ jobs:
 
     - name: Run email reporter
       run: |
+        pip install -r req.txt
         echo "SMTP_USER=$SMTP_USER"
-        python3 -B -m Source.Main
+        python3 -B -m Source.Main      
+
+    - name: Configure Git
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@qscvdefb@gmail.com"
+
+    - name: Commit changes
+      run: |
+        git add .
+        git commit -m "chore: auto update data & report" || echo "No changes to commit"
+        git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

@@ -25,6 +25,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/128/12180/12180668.png" alt="Dark theme" class="theme-icon" id="themeIcon">
                     <span id="themeText">Dark</span>
                 </div>
+                <button class="project-link logs-button" onclick="dashboard.openLogsModal()">
+                    📝 Logs
+                </button>
                 <a href="https://github.com/fortress-of-the-fallen" target="_blank" class="project-link">
                     <!-- <span class="link-icon">👥</span> -->
                     Organization
@@ -127,6 +130,61 @@
             </div>
             <div class="modal-body" id="modalBody">
                 <div class="loading">Đang tải báo cáo...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logs Modal -->
+    <div id="logsModal" class="modal logs-modal">
+        <div class="modal-content logs-modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">📝 System Logs</h2>
+                <span class="close" onclick="dashboard.closeLogsModal()">&times;</span>
+            </div>
+            <div class="logs-container">
+                <div class="logs-sidebar">
+                    <div class="logs-header">
+                        <h3>📂 Log Files</h3>
+                        <button class="refresh-button" onclick="dashboard.refreshLogsList()">🔄 Refresh</button>
+                    </div>
+                    <div id="logFilesList" class="log-files-list">
+                        <div class="loading">Đang tải danh sách log files...</div>
+                    </div>
+                </div>
+                <div class="logs-content">
+                    <div class="logs-content-header">
+                        <h3 id="currentLogFile">Chọn một file log để xem nội dung</h3>
+                        <div class="logs-actions">
+                            <input type="text" id="logSearch" placeholder="🔍 Tìm kiếm trong logs..." onkeyup="dashboard.searchLogs()">
+                            <button class="log-action-btn" onclick="dashboard.downloadCurrentLog()">💾 Tải xuống</button>
+                        </div>
+                    </div>
+                    <div id="logContent" class="log-content">
+                        <div class="empty-state">👈 Chọn một file log từ danh sách bên trái</div>
+                    </div>
+                    <div id="logStats" class="log-stats" style="display: none;">
+                        <div class="stat-item">
+                            <span class="stat-label">Tổng dòng:</span>
+                            <span class="stat-value" id="totalLines">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">INFO:</span>
+                            <span class="stat-value info" id="infoCount">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">ERROR:</span>
+                            <span class="stat-value error" id="errorCount">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">WARNING:</span>
+                            <span class="stat-value warning" id="warningCount">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">DEBUG:</span>
+                            <span class="stat-value debug" id="debugCount">0</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
