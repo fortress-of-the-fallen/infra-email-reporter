@@ -71,17 +71,20 @@ class SprintItemService:
         sprint_list = filtered
         
         sprint_index = FileHelper.ReadJsonFile(f"{ConfigKey.SPRINT_DATA_DIR}/index.json")
+        FileHelper.WriteFile(f"{ConfigKey.SPRINT_DATA_DIR}/sprint-{sprint_list[0]}.json", json.dumps(data, indent=4, ensure_ascii=False))
+
+        for i in range(len(sprint_list)):
+            sprint_list[i] = f"sprint-{sprint_list[i]}.json"
         
-        if sprint_index is None or len(sprint_list) == 0:
+        if sprint_index is None or len(sprint_index) == 0:
             FileHelper.WriteFile(f"{ConfigKey.SPRINT_DATA_DIR}/index.json", json.dumps(sprint_list, indent=4, ensure_ascii=False))
         elif sprint_list[0] not in sprint_index:
-            sprint_list.append(sprint_list[0])
+            sprint_index.append(sprint_list[0])
             FileHelper.WriteFile(f"{ConfigKey.SPRINT_DATA_DIR}/index.json", json.dumps(sprint_list, indent=4, ensure_ascii=False))
             logging.info(f"New sprint {sprint_list[0]} added to index.json")
         
         data = list(filter(lambda x: x.get("sprint", {}).get("startDate") == sprint_list[0], data))
         
-        FileHelper.WriteFile(f"{ConfigKey.SPRINT_DATA_DIR}/sprint-{sprint_list[0]}.json", json.dumps(data, indent=4, ensure_ascii=False))
         logging.info(f"Filtered sprint data written to sprint-{sprint_list[0]}.json")
         
 if __name__ == "__main__":
