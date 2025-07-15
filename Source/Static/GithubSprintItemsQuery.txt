@@ -1,0 +1,38 @@
+{
+    organization(login: "fortress-of-the-fallen") {
+        projectV2(number: 1) {
+            title
+            items(last: 50) {
+                nodes {
+                    id
+                    content {
+                        ... on Issue {
+                            title
+                            url
+                            number
+                            state
+                            author {
+                                login
+                                url
+                                avatarUrl
+                            }
+                        }
+                    }
+                    fieldValues(first: 20) {
+                        nodes {
+                            ... on ProjectV2ItemFieldIterationValue {
+                                field {
+                                    ... on ProjectV2FieldCommon {
+                                        name
+                                    }
+                                }
+                                duration
+                                startDate
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

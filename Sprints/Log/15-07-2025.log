@@ -4,41 +4,6 @@
 2025-07-15 20:34:06 - root - INFO - Running work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x0000021E860FFA10>
 2025-07-15 20:34:14 - root - INFO - Response status code: 200
 2025-07-15 20:34:14 - root - INFO - Response text: {
-  "candidates": [
-    {
-      "content": {
-        "parts": [
-          {
-            "text": "## 🧾 Phân tích Sprint\n\n### 1. 🧠 **Ước lượng độ khó của từng task**\n\nDưới đây là ước lượng độ khó của từng task, dựa trên tiêu đề của chúng:\n\n| Task                                                | Độ khó ước tính |\n|-----------------------------------------------------|-----------------|\n| Power System                                        | Trung bình      |\n| Resource system                                     | Trung bình      |\n| add mongo deffered excution                         | Cao            |\n| Complete Game prototype                             | Cao            |\n| System & feature                                     | Trung bình      |\n| Game Mechanics                                       | Trung bình      |\n| Core Game Loop                                      | Cao            |\n| setup cqrs application                              | Cao            |\n| deffered execution for read database                | Cao            |\n| deferred execution for write database               | Cao            |\n| add redis connection                                | Trung bình      |\n| Game Progression                                     | Trung bình      |\n| setup auto reporter everyday via ci/cd              | Trung bình      |\n| World Building                                      | Trung bình      |\n| Race                                                 | Thấp            |\n| Map Building                                       | Trung bình      |\n| add sprint item crawler & visualization             | Trung bình      |\n\n### 2. 📊 **So sánh performance contributor**\n\nDưới đây là bảng so sánh hiệu suất của từng contributor trong sprint này:\n\n| Contributor | Tổng số Task | Task đã hoàn thành | Tỷ lệ hoàn thành | Tổng độ khó task hoàn thành |\n|-------------|---------------|---------------------|--------------------|-----------------------------------|\n| TKira4     | 10            | 2                   | 20%               | Trung bình * 2                    |\n| wwenrr     | 7             | 7                   | 100%              | Cao * 4 + Trung bình * 3         |\n\n**Giải thích về \"Tổng độ khó task hoàn thành\":**\n\n*   **Cao:** Mỗi task độ khó cao được tính là 3 điểm.\n*   **Trung bình:** Mỗi task độ khó trung bình được tính là 2 điểm.\n*   **Thấp:** Mỗi task độ khó thấp được tính là 1 điểm.\n\nDựa trên ước lượng độ khó và số lượng task hoàn thành, wwenrr có tổng độ khó task hoàn thành cao hơn TKira4 rất nhiều.\n\n### 4. ✅ **Kết luận**\n\n**Kết luận:**\n\nTrong sprint này, **wwenrr có hiệu suất tốt hơn TKira4**.\n\n**Lý do:**\n\n*   wwenrr hoàn thành **100%** số task được giao, trong khi TKira4 chỉ hoàn thành **20%**.\n*   wwenrr đã hoàn thành nhiều task có độ khó cao (deferred execution, CQRS setup) cũng như các task trung bình liên quan đến CI/CD và kết nối.\n*   TKira4 hoàn thành ít task hơn và các task hoàn thành cũng có độ khó trung bình.\n\n**Gợi ý cải thiện cho TKira4:**\n\n*   **Tập trung vào hoàn thành các task hiện tại:** Thay vì nhận quá nhiều task cùng lúc, hãy tập trung vào việc hoàn thành dứt điểm từng task một.\n*   **Chia nhỏ task lớn:** Các task như \"Complete Game prototype\" có thể quá lớn và khó quản lý. Chia nhỏ chúng thành các task nhỏ hơn, cụ thể hơn, giúp dễ dàng theo dõi tiến độ và hoàn thành hơn.\n*   **Ưu tiên task quan trọng:** Xác định những task nào quan trọng nhất và tập trung vào chúng trước. Có thể có những task đang \"block\" các task khác.\n*   **Trao đổi với team:** Nếu gặp khó khăn trong quá trình thực hiện, đừng ngần ngại trao đổi với các thành viên khác trong team để được giúp đỡ.\n*   **Chủ động hơn:** Theo dõi sát sao tiến độ task và chủ động thông báo cho team nếu có nguy cơ chậm trễ.\n"
-          }
-        ],
-        "role": "model"
-      },
-      "finishReason": "STOP",
-      "avgLogprobs": -0.24531436556219632
-    }
-  ],
-  "usageMetadata": {
-    "promptTokenCount": 3296,
-    "candidatesTokenCount": 849,
-    "totalTokenCount": 4145,
-    "promptTokensDetails": [
-      {
-        "modality": "TEXT",
-        "tokenCount": 3296
-      }
-    ],
-    "candidatesTokensDetails": [
-      {
-        "modality": "TEXT",
-        "tokenCount": 849
-      }
-    ]
-  },
-  "modelVersion": "gemini-2.0-flash",
-  "responseId": "z1h2aOTgN9rxgLUP6uGksQw"
-}
-
 2025-07-15 20:34:14 - root - INFO - Completed work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x0000021E860FFA10>
 2025-07-15 14:15:47 - root - INFO - Running work pipeline: <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x7f04bdcdcbd0>
 2025-07-15 14:15:49 - root - INFO - Completed work pipeline: <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x7f04bdcdcbd0>
@@ -57,3 +22,9 @@
 2025-07-15 14:27:51 - root - INFO - Response status code: 503
 2025-07-15 14:27:51 - root - ERROR - Error occurred while running pipeline <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x7f3ea9e58750>: 'candidates'
 2025-07-15 14:27:51 - root - INFO - Completed work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x7f3ea9e58750>
+2025-07-15 23:06:48 - root - INFO - Running work pipeline: <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x0000027D0BDB7620>
+2025-07-15 23:06:52 - root - ERROR - Error occurred while running pipeline <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x0000027D0BDB7620>: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-23de428497fsm116094155ad.49 - gsmtp')
+2025-07-15 23:06:52 - root - INFO - Completed work pipeline: <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x0000027D0BDB7620>
+2025-07-15 23:06:52 - root - INFO - Running work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x0000027D0BDB7770>
+2025-07-15 23:06:53 - root - INFO - Filtered sprint data written to sprint-2025-07-07.json
+2025-07-15 23:06:53 - root - INFO - Completed work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x0000027D0BDB7770>

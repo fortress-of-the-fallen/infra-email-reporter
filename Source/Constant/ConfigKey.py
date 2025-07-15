@@ -16,6 +16,8 @@ class ConfigKey:
     EMAIL_RECIPIENTS = _settings.get("email_recipients", [])
     
     # Sprint Items
+    GITHUB_API_URL = "https://api.github.com/graphql"
+    GITHUB_PAT_TOKEN = os.environ.get("PAT_TOKEN")
     SPRINT_DATA_DIR = "Sprints/Data"
     SPRINT_ITEMS_INDEX = FileHelper.ReadJsonFile("Sprints/Data/index.json")
     SPRINT_SUMMARY_PROMPT = FileHelper.ReadFile("Source/Static/SprintSummaryPrompt.txt")

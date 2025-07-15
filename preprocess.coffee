@@ -96,6 +96,8 @@ fetchProject = ->
     ).then (response) ->
       if response.ok
         response.json().then (data) ->
+          console.log data
+
           data = data.data.organization.projectV2.items.nodes
 
           data.map (item) ->
@@ -128,9 +130,11 @@ readSprintFiles = ->
     saveJsonToFile 'index.json', files
   catch 
 
-main = async () ->
-  await deleteJsonFiles("Sprints/Data")
-  await fetchProject()
-  readSprintFiles()
+main = () ->
+  deleteJsonFiles("Sprints/Data")
+  .then ->
+    fetchProject()
+    .then ->
+      readSprintFiles()
 
 main().catch (err) -> console.error err
