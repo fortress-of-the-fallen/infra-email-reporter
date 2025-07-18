@@ -1,10 +1,10 @@
 [
     {
-        "id": "PVTI_lADODQ_I8s4A9UIvzgcjhh4",
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcjhf8",
         "content": {
-            "title": "Base Resource system",
-            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/8",
-            "number": 8,
+            "title": "Power System",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/7",
+            "number": 7,
             "state": "OPEN",
             "author": {
                 "login": "TKira4",
@@ -15,20 +15,6 @@
         "sprint": {
             "duration": 14,
             "startDate": "2025-07-07"
-        }
-    },
-    {
-        "id": "PVTI_lADODQ_I8s4A9UIvzgcmi3U",
-        "content": {
-            "title": "stats system",
-            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/11",
-            "number": 11,
-            "state": "OPEN",
-            "author": {
-                "login": "TKira4",
-                "url": "https://github.com/TKira4",
-                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
-            }
         }
     },
     {
@@ -140,6 +126,24 @@
         }
     },
     {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcjhh4",
+        "content": {
+            "title": "Base Resource system",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/8",
+            "number": 8,
+            "state": "CLOSED",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-07"
+        }
+    },
+    {
         "id": "PVTI_lADODQ_I8s4A9UIvzgcdEpA",
         "content": {
             "title": "setup cqrs application",
@@ -173,6 +177,38 @@
         "sprint": {
             "duration": 14,
             "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcjh7Q",
+        "content": {
+            "title": "Racial system",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/9",
+            "number": 9,
+            "state": "CLOSED",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcmi3U",
+        "content": {
+            "title": "stats system",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/11",
+            "number": 11,
+            "state": "CLOSED",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
         }
     },
     {
@@ -263,42 +299,6 @@
         "sprint": {
             "duration": 14,
             "startDate": "2025-07-21"
-        }
-    },
-    {
-        "id": "PVTI_lADODQ_I8s4A9UIvzgcjh7Q",
-        "content": {
-            "title": "Racial system",
-            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/9",
-            "number": 9,
-            "state": "OPEN",
-            "author": {
-                "login": "TKira4",
-                "url": "https://github.com/TKira4",
-                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
-            }
-        },
-        "sprint": {
-            "duration": 14,
-            "startDate": "2025-07-07"
-        }
-    },
-    {
-        "id": "PVTI_lADODQ_I8s4A9UIvzgcjhf8",
-        "content": {
-            "title": "Power System",
-            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/7",
-            "number": 7,
-            "state": "OPEN",
-            "author": {
-                "login": "TKira4",
-                "url": "https://github.com/TKira4",
-                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
-            }
-        },
-        "sprint": {
-            "duration": 14,
-            "startDate": "2025-07-07"
         }
     },
     {
