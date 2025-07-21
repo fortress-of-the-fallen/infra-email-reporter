@@ -209,6 +209,10 @@
                 "url": "https://github.com/TKira4",
                 "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
             }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
         }
     },
     {
@@ -353,6 +357,42 @@
         "sprint": {
             "duration": 14,
             "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcxlgE",
+        "content": {
+            "title": "Feat: Implement Auth Apis",
+            "url": "https://github.com/fortress-of-the-fallen/back-end/issues/15",
+            "number": 15,
+            "state": "OPEN",
+            "author": {
+                "login": "wwenrr",
+                "url": "https://github.com/wwenrr",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/135491799?u=ac3acf8b2c829d5dbd42ea17effa05963865fccd&v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcxli8",
+        "content": {
+            "title": "Feat: Login via google",
+            "url": "https://github.com/fortress-of-the-fallen/back-end/issues/16",
+            "number": 16,
+            "state": "OPEN",
+            "author": {
+                "login": "wwenrr",
+                "url": "https://github.com/wwenrr",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/135491799?u=ac3acf8b2c829d5dbd42ea17effa05963865fccd&v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
         }
     }
 ]
