@@ -1,5 +1,23 @@
 [
     {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcjhcs",
+        "content": {
+            "title": "World Building",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/6",
+            "number": 6,
+            "state": "OPEN",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
+        }
+    },
+    {
         "id": "PVTI_lADODQ_I8s4A9UIvzgcjhf8",
         "content": {
             "title": "Power System",
@@ -306,24 +324,6 @@
         }
     },
     {
-        "id": "PVTI_lADODQ_I8s4A9UIvzgcjhcs",
-        "content": {
-            "title": "World Building",
-            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/6",
-            "number": 6,
-            "state": "OPEN",
-            "author": {
-                "login": "TKira4",
-                "url": "https://github.com/TKira4",
-                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
-            }
-        },
-        "sprint": {
-            "duration": 14,
-            "startDate": "2025-07-21"
-        }
-    },
-    {
         "id": "PVTI_lADODQ_I8s4A9UIvzgcjiMs",
         "content": {
             "title": "Map Building",
@@ -370,6 +370,24 @@
                 "login": "TKira4",
                 "url": "https://github.com/TKira4",
                 "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgc4Y7g",
+        "content": {
+            "title": "Init source base (DI & SignalR)",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-Client/issues/2",
+            "number": 2,
+            "state": "OPEN",
+            "author": {
+                "login": "wwenrr",
+                "url": "https://github.com/wwenrr",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/135491799?u=ac3acf8b2c829d5dbd42ea17effa05963865fccd&v=4"
             }
         },
         "sprint": {
