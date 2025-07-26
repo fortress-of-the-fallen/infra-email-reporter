@@ -394,5 +394,23 @@
             "duration": 14,
             "startDate": "2025-07-21"
         }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgc95_w",
+        "content": {
+            "title": "add erd design",
+            "url": "https://github.com/fortress-of-the-fallen/.github/issues/1",
+            "number": 1,
+            "state": "OPEN",
+            "author": {
+                "login": "wwenrr",
+                "url": "https://github.com/wwenrr",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/135491799?u=ac3acf8b2c829d5dbd42ea17effa05963865fccd&v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
+        }
     }
 ]
