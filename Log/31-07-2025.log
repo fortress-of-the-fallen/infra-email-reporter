@@ -1,0 +1,6 @@
+2025-07-31 11:17:24 - root - INFO - Running work pipeline: <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x7fc86d9b2310>
+2025-07-31 11:17:27 - root - INFO - Completed work pipeline: <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x7fc86d9b2310>
+2025-07-31 11:17:27 - root - INFO - Running work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x7fc86db0b990>
+2025-07-31 11:17:35 - root - INFO - Response status code: 200
+2025-07-31 11:17:35 - root - INFO - Filtered sprint data written to sprint-sprint-2025-07-21.json.json
+2025-07-31 11:17:35 - root - INFO - Completed work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x7fc86db0b990>
