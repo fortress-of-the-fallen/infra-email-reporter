@@ -1,0 +1,416 @@
+[
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcy7_8",
+        "content": {
+            "title": "Login Client",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-Client/issues/1",
+            "number": 1,
+            "state": "OPEN",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgc4Y7g",
+        "content": {
+            "title": "Init source base (DI & SignalR)",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-Client/issues/2",
+            "number": 2,
+            "state": "OPEN",
+            "author": {
+                "login": "wwenrr",
+                "url": "https://github.com/wwenrr",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/135491799?u=ac3acf8b2c829d5dbd42ea17effa05963865fccd&v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcjhf8",
+        "content": {
+            "title": "Power System",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/7",
+            "number": 7,
+            "state": "CLOSED",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcUo3I",
+        "content": {
+            "title": "Complete Game prototype ",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/1",
+            "number": 1,
+            "state": "OPEN",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcUsNE",
+        "content": {
+            "title": "System & feature",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/5",
+            "number": 5,
+            "state": "OPEN",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcjhcs",
+        "content": {
+            "title": "World Building",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/6",
+            "number": 6,
+            "state": "OPEN",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcxlgE",
+        "content": {
+            "title": "Feat: Implement Auth Apis",
+            "url": "https://github.com/fortress-of-the-fallen/back-end/issues/15",
+            "number": 15,
+            "state": "OPEN",
+            "author": {
+                "login": "wwenrr",
+                "url": "https://github.com/wwenrr",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/135491799?u=ac3acf8b2c829d5dbd42ea17effa05963865fccd&v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcUqN8",
+        "content": {
+            "title": "Game Mechanics",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/4",
+            "number": 4,
+            "state": "OPEN",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcUpOY",
+        "content": {
+            "title": "Core Game Loop",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/2",
+            "number": 2,
+            "state": "CLOSED",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcmi5o",
+        "content": {
+            "title": "skills system",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/12",
+            "number": 12,
+            "state": "CLOSED",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcjhh4",
+        "content": {
+            "title": "Base Resource system",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/8",
+            "number": 8,
+            "state": "CLOSED",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcjh7Q",
+        "content": {
+            "title": "Racial system",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/9",
+            "number": 9,
+            "state": "CLOSED",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcmi3U",
+        "content": {
+            "title": "stats system",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/11",
+            "number": 11,
+            "state": "CLOSED",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcxli8",
+        "content": {
+            "title": "Feat: Login via github",
+            "url": "https://github.com/fortress-of-the-fallen/back-end/issues/16",
+            "number": 16,
+            "state": "CLOSED",
+            "author": {
+                "login": "wwenrr",
+                "url": "https://github.com/wwenrr",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/135491799?u=ac3acf8b2c829d5dbd42ea17effa05963865fccd&v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcyvnQ",
+        "content": {
+            "title": "Implement RealTime Application & Send SessoinId Back To Client",
+            "url": "https://github.com/fortress-of-the-fallen/back-end/issues/18",
+            "number": 18,
+            "state": "CLOSED",
+            "author": {
+                "login": "wwenrr",
+                "url": "https://github.com/wwenrr",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/135491799?u=ac3acf8b2c829d5dbd42ea17effa05963865fccd&v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcW0_A",
+        "content": {
+            "title": "deferred execution for write database",
+            "url": "https://github.com/fortress-of-the-fallen/back-end/issues/9",
+            "number": 9,
+            "state": "CLOSED",
+            "author": {
+                "login": "wwenrr",
+                "url": "https://github.com/wwenrr",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/135491799?u=ac3acf8b2c829d5dbd42ea17effa05963865fccd&v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcUsKM",
+        "content": {
+            "title": "add redis connection",
+            "url": "https://github.com/fortress-of-the-fallen/back-end/issues/6",
+            "number": 6,
+            "state": "CLOSED",
+            "author": {
+                "login": "wwenrr",
+                "url": "https://github.com/wwenrr",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/135491799?u=ac3acf8b2c829d5dbd42ea17effa05963865fccd&v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcUqFY",
+        "content": {
+            "title": "Game Progression",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/3",
+            "number": 3,
+            "state": "CLOSED",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcjNmw",
+        "content": {
+            "title": "setup auto reporter everyday via ci/cd",
+            "url": "https://github.com/fortress-of-the-fallen/infra-email-reporter/issues/1",
+            "number": 1,
+            "state": "CLOSED",
+            "author": {
+                "login": "wwenrr",
+                "url": "https://github.com/wwenrr",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/135491799?u=ac3acf8b2c829d5dbd42ea17effa05963865fccd&v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcmjWs",
+        "content": {
+            "title": "class system",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/13",
+            "number": 13,
+            "state": "CLOSED",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcjiMs",
+        "content": {
+            "title": "Map Building",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-GDD/issues/10",
+            "number": 10,
+            "state": "OPEN",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-08-04"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgckE3A",
+        "content": {
+            "title": "add sprint item crawler & visualization",
+            "url": "https://github.com/fortress-of-the-fallen/infra-email-reporter/issues/3",
+            "number": 3,
+            "state": "CLOSED",
+            "author": {
+                "login": "wwenrr",
+                "url": "https://github.com/wwenrr",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/135491799?u=ac3acf8b2c829d5dbd42ea17effa05963865fccd&v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-07"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgc95_w",
+        "content": {
+            "title": "add erd design",
+            "url": "https://github.com/fortress-of-the-fallen/.github/issues/1",
+            "number": 1,
+            "state": "OPEN",
+            "author": {
+                "login": "wwenrr",
+                "url": "https://github.com/wwenrr",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/135491799?u=ac3acf8b2c829d5dbd42ea17effa05963865fccd&v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-07-21"
+        }
+    }
+]
