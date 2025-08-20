@@ -1,0 +1,6 @@
+2025-08-20 11:15:51 - root - INFO - Running work pipeline: <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x7ff96a9d0b90>
+2025-08-20 11:15:54 - root - INFO - Completed work pipeline: <Source.WorkPinelines.EmailPineline.EmailPipeline object at 0x7ff96a9d0b90>
+2025-08-20 11:15:54 - root - INFO - Running work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x7ff96a5fb110>
+2025-08-20 11:16:03 - root - INFO - Response status code: 200
+2025-08-20 11:16:04 - root - ERROR - Error occurred while running pipeline <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x7ff96a5fb110>: list index out of range
+2025-08-20 11:16:04 - root - INFO - Completed work pipeline: <Source.WorkPinelines.SprintItemReportPineline.SprintItemReportPipeline object at 0x7ff96a5fb110>
