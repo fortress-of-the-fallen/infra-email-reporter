@@ -54,6 +54,24 @@
         }
     },
     {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgeFtC8",
+        "content": {
+            "title": "implement docker compose for back end",
+            "url": "https://github.com/fortress-of-the-fallen/Game-Logic/issues/1",
+            "number": 1,
+            "state": "OPEN",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-09-01"
+        }
+    },
+    {
         "id": "PVTI_lADODQ_I8s4A9UIvzgc4Y7g",
         "content": {
             "title": "Init source base (DI & SignalR)",
@@ -108,24 +126,6 @@
         }
     },
     {
-        "id": "PVTI_lADODQ_I8s4A9UIvzgcy7_8",
-        "content": {
-            "title": "Login Client",
-            "url": "https://github.com/fortress-of-the-fallen/FotF-Client/issues/1",
-            "number": 1,
-            "state": "OPEN",
-            "author": {
-                "login": "TKira4",
-                "url": "https://github.com/TKira4",
-                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
-            }
-        },
-        "sprint": {
-            "duration": 14,
-            "startDate": "2025-09-01"
-        }
-    },
-    {
         "id": "PVTI_lADODQ_I8s4A9UIvzgcjhcs",
         "content": {
             "title": "World Building",
@@ -140,25 +140,7 @@
         },
         "sprint": {
             "duration": 14,
-            "startDate": "2025-09-01"
-        }
-    },
-    {
-        "id": "PVTI_lADODQ_I8s4A9UIvzgeFtC8",
-        "content": {
-            "title": "implement docker compose for back end",
-            "url": "https://github.com/fortress-of-the-fallen/Game-Logic/issues/1",
-            "number": 1,
-            "state": "OPEN",
-            "author": {
-                "login": "TKira4",
-                "url": "https://github.com/TKira4",
-                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
-            }
-        },
-        "sprint": {
-            "duration": 14,
-            "startDate": "2025-09-01"
+            "startDate": "2025-09-15"
         }
     },
     {
@@ -176,7 +158,25 @@
         },
         "sprint": {
             "duration": 14,
-            "startDate": "2025-09-01"
+            "startDate": "2025-09-15"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgcy7_8",
+        "content": {
+            "title": "Login Client",
+            "url": "https://github.com/fortress-of-the-fallen/FotF-Client/issues/1",
+            "number": 1,
+            "state": "OPEN",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-09-15"
         }
     },
     {
