@@ -149,7 +149,7 @@
             "title": "public source lên server và download update từ server",
             "url": "https://github.com/fortress-of-the-fallen/be-new/issues/1",
             "number": 1,
-            "state": "OPEN",
+            "state": "CLOSED",
             "author": {
                 "login": "TKira4",
                 "url": "https://github.com/TKira4",
@@ -447,6 +447,42 @@
         "sprint": {
             "duration": 14,
             "startDate": "2025-07-21"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgfDqa8",
+        "content": {
+            "title": "remove ack from auth api",
+            "url": "https://github.com/fortress-of-the-fallen/be-new/issues/2",
+            "number": 2,
+            "state": "OPEN",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-09-15"
+        }
+    },
+    {
+        "id": "PVTI_lADODQ_I8s4A9UIvzgfDqtk",
+        "content": {
+            "title": "complete sign up & sign out",
+            "url": "https://github.com/fortress-of-the-fallen/Game-Logic/issues/4",
+            "number": 4,
+            "state": "OPEN",
+            "author": {
+                "login": "TKira4",
+                "url": "https://github.com/TKira4",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/165282862?v=4"
+            }
+        },
+        "sprint": {
+            "duration": 14,
+            "startDate": "2025-09-15"
         }
     }
 ]
